@@ -1,0 +1,42 @@
+/*
+ 文字描画用のcanvas
+*/
+#render {
+  display: none;
+}
+
+/*
+ トレース結果のsvg描画部
+*/
+#res {
+  width: 500px;
+  height: 300px;
+}
+#res path {
+  stroke: #f7c;
+  stroke-opacity: 0.8;
+  stroke-linecap: round;
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+
+  fill: rgba(0, 0, 0, 0);
+
+  animation: 5s draw;
+  animation-fill-mode: forwards;
+}
+
+@keyframes draw {
+  0%{
+    stroke-dashoffset: 200;
+    fill: rgba(0,0,0,0);
+  }
+  70%{
+    stroke-dashoffset: 0;
+    fill: rgba(0,0,0,.1);
+  }
+
+  100%{
+    stroke-dashoffset: 0;
+    fill: rgba(0,0,0,0.6);
+  }
+}
